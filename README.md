@@ -80,7 +80,7 @@ WHERE
 
 The following SQL queries were developed to answer specific business questions:
 
-1. **Write an SQL query to retrieve all columns for sales made on '2022-11-06**:
+1. **Write an SQL query to retrieve all columns for sales made on '2022-11-06'**:
 ```sql
 SELECT *
 FROM retail_sales_staging1
@@ -110,14 +110,14 @@ FROM retail_sales_staging1
 GROUP BY category;
 ```
 
-4. **Write an SQL query to find the average age of customers who purchased items from the 'Electronics' category.**:
+4. **Write an SQL query to find the average age of customers who purchased items from the 'Electronics' category**:
 ```sql
 SELECT ROUND(AVG(age),2)
 FROM retail_sales_staging1
 WHERE category = 'Electronics'
 ```
 
-5. **Write an SQL query to find all transactions where the total_sale is greater than 1000.**:
+5. **Write an SQL query to find all transactions where the total_sale is greater than 1000**:
 ```sql
 SELECT transactions_id 
 FROM retail_sales_staging1
@@ -163,7 +163,7 @@ ORDER BY 2 DESC
 LIMIT 3;
 ```
 
-9. **Write an SQL query to find the number of unique customers who purchased items of each category.**:
+9. **Write an SQL query to find the number of unique customers who purchased items of each category**:
 ```sql
 SELECT category,
 COUNT(DISTINCT customer_id) AS unique_customers
@@ -190,7 +190,7 @@ SELECT
 FROM hourly_sale
 GROUP BY shift;
 ```
-11. **Write an sql query to find the hourly revenue based on the above findings.**:
+11. **Write an sql query to find the hourly revenue based on the above findings**:
 ```sql
 SELECT 
     EXTRACT(HOUR FROM sale_time) AS hour_of_day,
