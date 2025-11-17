@@ -80,14 +80,14 @@ WHERE
 
 The following SQL queries were developed to answer specific business questions:
 
-1. **Write a SQL query to retrieve all columns for sales made on '2022-11-06**:
+1. **Write an SQL query to retrieve all columns for sales made on '2022-11-06**:
 ```sql
 SELECT *
 FROM retail_sales_staging1
 WHERE sale_date = '2022-11-06';
 ```
 
-2. **Write a SQL query to retrieve all transactions where the category is 'Beauty' and the quantity sold is more than 4 in the month of Nov-2022**:
+2. **Write an SQL query to retrieve all transactions where the category is 'Beauty' and the quantity sold is more than 4 in the month of Nov-2022**:
 ```sql
 SELECT 
   *
@@ -100,7 +100,7 @@ WHERE
     quantity >= 4
 ```
 
-3. **Write a SQL query to calculate the total sales (total_sale) for each category.**:
+3. **Write an SQL query to calculate the total sales (total_sale) for each category.**:
 ```sql
 SELECT 
     category,
@@ -110,21 +110,21 @@ FROM retail_sales_staging1
 GROUP BY category;
 ```
 
-4. **Write a SQL query to find the average age of customers who purchased items from the 'Electronics' category.**:
+4. **Write an SQL query to find the average age of customers who purchased items from the 'Electronics' category.**:
 ```sql
 SELECT ROUND(AVG(age),2)
 FROM retail_sales_staging1
 WHERE category = 'Electronics'
 ```
 
-5. **Write a SQL query to find all transactions where the total_sale is greater than 1000.**:
+5. **Write an SQL query to find all transactions where the total_sale is greater than 1000.**:
 ```sql
 SELECT transactions_id 
 FROM retail_sales_staging1
 WHERE total_sale>1000
 ```
 
-6. **Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.**:
+6. **Write an SQL query to find the total number of transactions (transaction_id) made by each gender in each category**:
 ```sql
 SELECT 
 category, gender,
@@ -134,7 +134,7 @@ GROUP BY category, gender
 ORDER BY 1
 ```
 
-7. **Write a SQL query to calculate the average sale for each month and also find out best selling month in each year**:
+7. **Write an SQL query to calculate the average sale for each month and also find out best selling month in each year**:
 ```sql
 SELECT year, month, avg_sales
 FROM (
@@ -152,7 +152,7 @@ FROM (
 WHERE rank = 1;
 ```
 
-8. **Write a SQL query to find the top 3 customers based on the highest total sales **:
+8. **Write an SQL query to find the top 3 customers based on the highest total sales**:
 ```sql
 SELECT 
     customer_id,
@@ -163,7 +163,7 @@ ORDER BY 2 DESC
 LIMIT 3;
 ```
 
-9. **Write a SQL query to find the number of unique customers who purchased items of each category.**:
+9. **Write an SQL query to find the number of unique customers who purchased items of each category.**:
 ```sql
 SELECT category,
 COUNT(DISTINCT customer_id) AS unique_customers
@@ -171,7 +171,7 @@ FROM retail_sales_staging1
 GROUP BY category;
 ```
 
-10. **Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 16, Evening >16)**:
+10. **Write an SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 16, Evening >16)**:
 ```sql
 WITH hourly_sale AS (
     SELECT 
